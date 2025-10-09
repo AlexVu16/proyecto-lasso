@@ -105,7 +105,7 @@ header {
 /*Vamos a crear una clase para agregar el fondo en el inicio de la pagina web*/
 
 .fondo_guitarra {
-    background-image: url(./imagenes_de_lasso/elija-cuerdas-de-guitarra-electrica.jpg);
+    background-image: url(./imagenes_de_lasso/guitarra.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
