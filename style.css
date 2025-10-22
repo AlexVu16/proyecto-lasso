@@ -1,3 +1,17 @@
+/* RESET GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+    /* evita scroll lateral */
+}
+
 /* Comentario en CSS*/
 
 /*Estilos de la lista de navegaciones Y color*/
@@ -165,7 +179,7 @@ p {
 }
 
 .texto_formal {
-    margin-top: 90;
+    margin-top: 90px;
     justify-content: center;
 }
 
@@ -217,10 +231,10 @@ form {
     margin: auto;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 25px;
-    
+
 }
 
-.formulario{
+.formulario {
     margin-bottom: 20px;
     width: 100%;
 }
@@ -230,7 +244,8 @@ label {
     margin-bottom: 5px;
 }
 
-input, textarea {
+input,
+textarea {
     width: 100%;
     padding: 10px;
     font-size: 1rem;
@@ -262,9 +277,16 @@ button:hover {
 
 /*responsive media query a mobile*/
 @media (max-width: 480px) {
+
+    header {
+        /*Elimina que quede fijo el navegador*/
+        position: static;
+    }
+
     /* Ajuste del body */
     body {
-        font-size: 14px; /* Reducir tamaño de fuente para dispositivos pequeños */
+        font-size: 14px;
+        /* Reducir tamaño de fuente para dispositivos pequeños */
         margin: 0;
     }
 
@@ -275,64 +297,79 @@ button:hover {
 
     /* Estilos del menú de navegación */
     nav ul {
-        flex-direction: column; /* Cambiar la dirección de la lista para apilar los elementos */
-        align-items: center; /* Centrar los elementos */
+        flex-direction: column;
+        /* Cambiar la dirección de la lista para apilar los elementos */
+        align-items: center;
+        /* Centrar los elementos */
         padding: 0;
     }
 
     .navegador {
-        font-size: 1.5rem; /* Reducir tamaño de texto para los links */
-        margin: 10px 0; /* Ajustar los márgenes */
+        font-size: 1.5rem;
+        /* Reducir tamaño de texto para los links */
+        margin: 10px 0;
+        /* Ajustar los márgenes */
         padding: 10px 0;
     }
 
     .logo img {
-        width: 150px; /* Reducir tamaño del logo */
+        width: 150px;
+        /* Reducir tamaño del logo */
         padding: 0;
     }
 
     /* Ajustes al footer */
     .footer-container {
-        font-size: 14px; /* Reducir tamaño de fuente */
+        font-size: 14px;
+        /* Reducir tamaño de fuente */
         padding: 10px 0;
     }
 
     .social-icons {
-        gap: 10px; /* Reducir el espacio entre iconos */
+        gap: 10px;
+        /* Reducir el espacio entre iconos */
         margin-bottom: 10px;
     }
 
     .icono {
-        width: 40px; /* Reducir el tamaño de los iconos de redes sociales */
+        width: 40px;
+        /* Reducir el tamaño de los iconos de redes sociales */
         height: 40px;
     }
 
     .footer-text {
-        font-size: 12px; /* Reducir tamaño de texto del pie de página */
+        font-size: 12px;
+        /* Reducir tamaño de texto del pie de página */
     }
 
     /* Ajustes del título */
     .titulo {
-        font-size: 2.5rem; /* Reducir el tamaño del título */
+        font-size: 2.5rem;
+        /* Reducir el tamaño del título */
         padding: 20px;
     }
 
     /* Estilos de la imagen y presentación */
     .presentacion {
-        flex-direction: column; /* Apilar la imagen y el texto */
+        flex-direction: column;
+        /* Apilar la imagen y el texto */
         text-align: center;
         padding: 20px;
     }
 
     .lasso {
-        width: 100%; /* Hacer que la imagen ocupe el 100% del ancho en móviles */
-        max-width: 300px; /* Limitar el tamaño máximo de la imagen */
-        margin: 0 auto 20px; /* Centrar la imagen y añadir espacio debajo */
+        width: 100%;
+        /* Hacer que la imagen ocupe el 100% del ancho en móviles */
+        max-width: 300px;
+        /* Limitar el tamaño máximo de la imagen */
+        margin: 0 auto 20px;
+        /* Centrar la imagen y añadir espacio debajo */
     }
 
     /* Ajustes en el texto */
     p {
-        font-size: 18px; /* Reducir tamaño de texto de párrafos */
+        font-size: 18px;
+        /* Reducir tamaño de texto de párrafos */
         margin: 10px;
         padding: 0 15px;
     }
@@ -343,26 +380,32 @@ button:hover {
         padding: 20px;
     }
 
-    input, textarea {
-        font-size: 1rem; /* Ajustar el tamaño de las fuentes */
+    input,
+    textarea {
+        font-size: 1rem;
+        /* Ajustar el tamaño de las fuentes */
         padding: 12px;
     }
 
     button {
-        width: 100%; /* Hacer que el botón ocupe todo el ancho */
+        width: 100%;
+        /* Hacer que el botón ocupe todo el ancho */
         padding: 12px;
     }
 
     /* Ajustes a los elementos con la clase .card */
     .card {
-        width: 100%; /* Asegurarse de que las tarjetas ocupen todo el ancho */
+        width: 100%;
+        /* Asegurarse de que las tarjetas ocupen todo el ancho */
         padding: 10px;
     }
 
     .album-img {
-        width: 100%; /* Asegurarse de que las imágenes dentro de las tarjetas se adapten */
+        width: 100%;
+        /* Asegurarse de que las imágenes dentro de las tarjetas se adapten */
         height: auto;
     }
+
     /* Ajustar la imagen dentro de la sección de la discografía */
     .discografica {
         display: block;
@@ -370,16 +413,41 @@ button:hover {
     }
 
     iframe {
-        width: 100%; /* Hacer que el iframe ocupe el 100% del ancho */
-        height: 500px; /* Ajustar la altura del iframe */
+        width: 100%;
+        /* Hacer que el iframe ocupe el 100% del ancho */
+        height: 500px;
+        /* Ajustar la altura del iframe */
         margin-bottom: 20px;
     }
 
     /* Ajuste de la descripción de la playlist */
     .texto_formal {
-        font-size: 1rem; /* Reducir tamaño de texto */
+        font-size: 1rem;
+        /* Reducir tamaño de texto */
         margin: 10px;
         padding: 0 15px;
     }
-    
+
+    /* Estilos para la sección de biografía en pantallas pequeñas */
+    .biografia1,
+    .biografia2 {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
     }
+
+    .biografia1 img,
+    .biografia2 img {
+        max-width: 90%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .subtitulo {
+        font-size: 1.8rem;
+        padding-left: 20px;
+        text-align: center;
+    }
+
+}
