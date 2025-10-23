@@ -1,0 +1,12 @@
+.biografia1,
+.biografia2 {
+  @include centrar-flex(row, space-around);
+
+  img {
+    border-radius: 10px;
+  }
+}
+
+.biografia2 {
+  padding-bottom: 50px;
+}

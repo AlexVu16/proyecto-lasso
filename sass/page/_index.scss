@@ -1,0 +1,9 @@
+.presentacion {
+  @include centrar-flex(row, space-between);
+  padding-bottom: 40px;
+
+  .lasso {
+    width: 500px;
+    padding-left: 20px;
+  }
+}

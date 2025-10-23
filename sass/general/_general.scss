@@ -1,0 +1,179 @@
+// VARIABLES
+$color-fondo: #0e0d0d;
+$color-texto: #ffffff;
+$color-secundario: #ff4e00;
+$fuente-titulos: cursive;
+$fuente-general: Arial, sans-serif;
+
+// MIXIN para centrar con flexbox
+@mixin centrar-flex($direccion: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direccion;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// RESET BÁSICO
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: $fuente-general;
+}
+
+// HEADER Y NAV
+header {
+  background-color: black;
+  position: sticky;
+  top: 0;
+
+  nav {
+    ul {
+      list-style: none;
+      @include centrar-flex(row, space-around);
+      margin: 0;
+
+      li {
+        a.navegador {
+          color: $color-texto;
+          text-decoration: none;
+          font-size: 2rem;
+          font-family: $fuente-titulos;
+          margin: 50px;
+          padding-right: 40px;
+          transition: color 0.3s;
+
+          &:hover {
+            color: $color-secundario;
+          }
+        }
+      }
+    }
+  }
+
+  .logo {
+    img {
+      width: 200px;
+    }
+  }
+}
+
+// FOOTER
+.footer {
+  background-color: $color-fondo;
+  color: $color-texto;
+  padding: 5px 0;
+  text-align: center;
+  font-family: $fuente-general;
+
+  .footer-container {
+    font-size: 18px;
+    color: lighten($color-texto, 20%);
+  }
+
+  .social-icons {
+    @include centrar-flex(row, center);
+    gap: 15px;
+
+    .icono {
+      width: 55px;
+      height: 55px;
+    }
+  }
+
+  .footer-text {
+    font-size: 13px;
+    color: #bbbbbb;
+  }
+}
+
+// ANIMACIONES
+
+@keyframes zoomRebote {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(30px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-10px);
+  }
+  80% {
+    transform: scale(0.95) translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes brillo {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+// TÍTULOS
+.titulo {
+  font-size: 60px;
+  font-family: $fuente-titulos;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bold;
+
+  /* QUITÉ opacity: 0 de acá para que no esté invisible inicialmente */
+  animation: zoomRebote 1.8s ease-out forwards;
+
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    animation: brillo 2.5s infinite;
+  }
+}
+
+.subtitulo {
+  @extend .titulo;
+  font-size: 50px;
+  text-align: start;
+  padding-left: 170px;
+}
+
+// FONDO INICIAL
+.fondo_guitarra {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../imagenes_de_lasso/guitarra.jpg) center/cover no-repeat;
+  color: $color-texto;
+}
+
+// PÁRRAFOS
+p {
+  font-size: 30px;
+  font-family: $fuente-titulos;
+  margin: 90px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000;
+}
