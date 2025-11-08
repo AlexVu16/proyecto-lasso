@@ -207,10 +207,10 @@ $icon-size-mobile: 40px;
   }
 }
 
-// === Responsive para TABLETS (481px – 1100px) ===
-@media (min-width: 481px) and (max-width: 1100px) {
+// === Responsive para TABLETS (481px – 1300px) ===
+@media (min-width: 481px) and (max-width: 1300px) {
 
-  // HEADER Y NAVEGADOR
+  // ===== HEADER Y NAVEGADOR =====
   header {
     padding: 20px 40px;
 
@@ -219,21 +219,19 @@ $icon-size-mobile: 40px;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      gap: 30px;
+      gap: 25px;
 
       ul {
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: 30px;
+        flex-wrap: wrap;
         list-style: none;
         padding: 0;
         margin: 0 auto;
+        gap: 25px;
 
         li {
-          list-style: none;
-
           a.navegador {
             font-size: 1rem;
             padding: 8px 10px;
@@ -248,7 +246,7 @@ $icon-size-mobile: 40px;
         }
 
         .logo {
-          display: flex;
+          display: none !important;  // <-- OCULTAMOS EL LOGO EN EL MENÚ SOLO EN TABLETS
           justify-content: center;
           align-items: center;
 
@@ -262,12 +260,25 @@ $icon-size-mobile: 40px;
     }
   }
 
-  // BODY GENERAL
+  // ===== LOGO EN CONTACTO (SE MUESTRA SOLO EN TABLETS) =====
+  .logo-contacto {
+    display: flex !important;
+    justify-content: center;
+    margin-top: 20px;
+
+    img {
+      width: 100px;
+      height: auto;
+      display: block;
+    }
+  }
+
+  // ===== BODY GENERAL =====
   body {
     font-size: $font-size-medium;
   }
 
-  // PRESENTACIÓN
+  // ===== PRESENTACIÓN =====
   .presentacion {
     flex-direction: row;
     justify-content: center;
@@ -276,48 +287,64 @@ $icon-size-mobile: 40px;
     padding: 40px;
 
     .lasso {
-      width: 50%;
+      width: 45%;
       max-width: 400px;
       margin: 0;
+      object-fit: cover;
     }
 
     p {
+      width: 50%;
       font-size: 1.1rem;
       text-align: left;
+      line-height: 1.6;
     }
   }
 
-  // TARJETAS (dos columnas flexibles)
+  // ===== TARJETAS EN TABLETS: Imagen arriba, texto abajo =====
   .card-group {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    justify-content: center;
-    align-items: stretch;
-
     .card {
-      background-color: #000;
+      display: flex;
+      flex-direction: column; // Imagen arriba, texto abajo
+      align-items: center;
+      justify-content: flex-start;
+      width: 90% !important;
+      max-width: 350px;  // Ajustado para tablets
+      background-color: #111;
       color: #fff;
-      border: 1px solid #222;
-      border-radius: 10px;
+      border-radius: 15px;
       overflow: hidden;
-      text-align: left;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      margin: 0 auto 30px;
 
       .album-img {
         width: 100%;
         height: auto;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 15px 15px 0 0;
         display: block;
       }
 
       .card-body {
         padding: 20px;
-        font-size: 1rem;
-        line-height: 1.5;
+        text-align: center;
+
+        h2 {
+          margin-bottom: 10px;
+          font-size: 1.3rem;
+        }
+
+        p {
+          font-size: 1rem;
+          line-height: 1.5;
+          color: #ddd;
+        }
       }
     }
   }
 
-  // DISCOGRÁFICA
+  // ===== DISCOGRÁFICA =====
   .discografica {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -327,7 +354,7 @@ $icon-size-mobile: 40px;
 
     iframe {
       width: 100%;
-      aspect-ratio: 16 / 9; // altura automática
+      aspect-ratio: 16 / 9;
       max-height: 420px;
       margin: 0 auto 20px;
       display: block;
@@ -344,7 +371,7 @@ $icon-size-mobile: 40px;
     }
   }
 
-  // BIOGRAFÍA
+  // ===== BIOGRAFÍA =====
   .biografia1,
   .biografia2 {
     flex-direction: row;
@@ -356,16 +383,18 @@ $icon-size-mobile: 40px;
     img {
       width: 45%;
       height: auto;
+      object-fit: cover;
     }
 
     p {
       width: 50%;
       font-size: 1rem;
       text-align: left;
+      line-height: 1.6;
     }
   }
 
-  // FOOTER
+  // ===== FOOTER =====
   .footer {
     background-color: #000;
 
@@ -395,4 +424,3 @@ $icon-size-mobile: 40px;
     }
   }
 }
-
