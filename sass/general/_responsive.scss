@@ -7,6 +7,24 @@ $icon-size-mobile: 40px;
 
 @media (max-width: 480px) {
 
+  // === RESETEO GENERAL ===
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; // elimina margen blanco lateral
+  }
+
+  * {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  iframe {
+    display: block;
+    max-width: 100vw; // evita desbordes del iframe
+  }
+
   // HEADER Y NAVEGADOR
   header {
     position: static;
@@ -18,7 +36,6 @@ $icon-size-mobile: 40px;
       justify-content: center;
       align-items: center;
 
-      // Centramos todo el contenido dentro del nav
       ul {
         display: flex;
         flex-direction: column;
@@ -43,7 +60,6 @@ $icon-size-mobile: 40px;
         }
       }
 
-      // Logo centrado
       .logo {
         display: flex;
         justify-content: center;
@@ -136,58 +152,66 @@ $icon-size-mobile: 40px;
     }
   }
 
-  // TARJETAS (versión corregida)
   // TARJETAS (versión final sin separación)
-  .card {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: none;
-    line-height: 0; // evita espacio entre imagen y texto
+  .card-group {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden;
 
-    .album-img {
+    .card {
       width: 100%;
-      height: auto;
-      display: block;
-      margin: 0;
-      padding: 0;
-      border: none;
-      vertical-align: bottom; // elimina cualquier línea blanca residual
-    }
-
-    .card-body {
       padding: 0;
       margin: 0;
       border: none;
-      background-color: black;
-      line-height: normal; // restablece line-height dentro del texto
-    }
+      background: none;
+      line-height: 0;
 
-    .card-group {
-      margin: 0;
-      padding: 0;
-      gap: 0; // si estás usando flex o grid, esto elimina el espacio entre tarjetas
+      .album-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: none;
+        vertical-align: bottom;
+      }
+
+      .card-body {
+        padding: 0;
+        margin: 0;
+        border: none;
+        background-color: black;
+        line-height: normal;
+      }
     }
-    
   }
 
-
-  // DISCOGRÁFICA
+  // DISCOGRÁFICA (CENTRADA CON PADDING IGUAL AL DISEÑO)
   .discografica {
-    display: block;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 30px; // mantiene el mismo padding visual que tu captura
+    margin: 0 auto;
 
     iframe {
       width: 100%;
+      max-width: 400px;
       height: 500px;
-      margin-bottom: 20px;
+      margin: 0 auto 20px;
+      display: block;
+      border-radius: 12px;
+      padding: 30px;
     }
 
     .texto_formal {
       font-size: $font-size-medium;
-      margin: 10px;
-      padding: 0 15px;
+      margin: 10px auto;
+      padding: 0;
+      max-width: 100%;
+      text-align: center;
     }
   }
 
@@ -206,6 +230,9 @@ $icon-size-mobile: 40px;
     }
   }
 }
+
+
+
 
 // === Responsive para TABLETS (481px – 1300px) ===
 @media (min-width: 481px) and (max-width: 1300px) {
